@@ -1,0 +1,245 @@
+// Primary
+$purple : hsl(259, 100%, 65%);
+$light-red: hsl(0, 100%, 67%);
+
+$normal-font: "Roboto", serif;
+
+// Neutral
+$white: hsl(0, 0%, 100%);
+$off-white: hsl(0, 0%, 94%);
+$light-grey: hsl(0, 0%, 86%);
+$smokey-grey: hsl(0, 1%, 44%);
+$off-black: hsl(0, 0%, 8%);
+
+$normal-wdith: 54rem;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: $off-white;
+    color: $off-black;
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.card {
+    width: min(80%, $normal-wdith);
+    background-color: $white;
+    padding: 2.5rem;
+    border-radius: 2rem;
+    border-bottom-right-radius: 10rem;
+}
+
+.inputs {
+    font-family: $normal-font;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    text-transform: uppercase;
+}
+
+.inputs label {
+    font-size: clamp(0.5rem, 1.5vw, 1rem);
+    font-weight: 700;
+    color: $smokey-grey;
+    letter-spacing: 3px;
+}
+
+@font-face {
+    font-family: 'Poppins-ExtraBold';
+    src: url('assets/fonts/Poppins-Bold.ttf');
+}
+
+.inputs input {
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    padding: 0.6rem;
+    outline: none;
+    border: 1px solid $light-grey;
+    border-radius: 0.2rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    font-family: 'Poppins-ExtraBold';
+    color: $off-black;
+
+    &:focus {
+        border-color: $purple;
+    }
+}
+
+ 
+
+@font-face {
+    font-family: 'Poppins-Italic';
+    src: url('assets/fonts/Poppins-Italic.ttf');
+}
+
+
+.inputs p {
+    letter-spacing: 0px;
+    text-transform: none;
+    margin-top: 0.2rem;
+    color: $light-red;
+    font-weight: 400;
+    font-family: 'Poppins-Italic';
+    font-style: italic;
+    font-size: clamp(0.4rem, 1.2vw, 1rem);
+    visibility: hidden;
+}
+
+.warning {
+    animation: shake 0.2s ease-in-out;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+        color: $smokey-grey;
+    }
+
+    25% {
+        transform: translateX(5px);
+        color: $light-red;
+    }
+
+    50% {
+        transform: translateX(-5px);
+        color: $smokey-grey;
+    }
+
+    75% {
+        transform: translateX(5px);
+        color: $light-red;
+    }
+}
+
+.show-result {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+hr {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid $light-grey;
+    background-color: $light-grey;
+}
+
+button {
+    background-color: $purple;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    padding: 1rem;
+    cursor: pointer;
+
+    &:hover {
+        filter: hue-rotate(40deg);
+        filter: drop-shadow(1px 0px 2px $purple);
+    }
+
+    &:focus{
+        border-color: $purple;
+        box-shadow: 0 0 0 2px $purple;
+        outline: none;
+    }
+}
+
+button img {
+    width: 100%;
+    height: auto;
+}
+
+@font-face {
+    font-family: 'myfontface';
+    src: url('assets/fonts/Poppins-ExtraBoldItalic.ttf') format('truetype');
+}
+
+.outputs {
+    font-size: clamp(3rem, 7vw, 5rem);
+    color: hsl(0, 0%, 8%);
+    font-weight: 700;
+    font-family: 'myfontface';
+    font-weight: 900;
+    font-style: italic;
+}
+
+
+.outputs span {
+    color: $purple;
+    letter-spacing: 1px;
+}
+
+@media screen and (max-width: 600px) {
+    .inputs {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .show-result {
+        margin-top: 1rem;
+        position: relative;
+        height: 65px;
+    }
+
+    button {
+        width: 60px;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-width: 430px) {
+     
+    .outputs {
+        font-size: clamp(2.5rem, 7vw, 5rem);
+    }
+    
+    button {
+        width: 55px;
+        height: auto;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+     
+    .outputs {
+        font-size: clamp(2rem, 7vw, 5rem);
+    }
+    
+    button {
+        width: 55px;
+        height: auto;
+    }
+
+    .card {
+        border-bottom-right-radius: 7rem;
+    }
+
+    .inputs input {
+        font-size: clamp(0.8rem, 1vw, 1.8rem);
+    }
+
+    .inputs p {
+        font-size: clamp(0.3rem, 1vw, 1rem);   
+    }
+
+}

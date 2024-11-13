@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: hsl(0, 0%, 94%);
+  color: hsl(0, 0%, 8%);
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  width: min(80%, 54rem);
+  background-color: hsl(0, 0%, 100%);
+  padding: 2.5rem;
+  border-radius: 2rem;
+  border-bottom-right-radius: 10rem;
+}
+
+.inputs {
+  font-family: "Roboto", serif;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  text-transform: uppercase;
+}
+
+.inputs label {
+  font-size: clamp(0.5rem, 1.5vw, 1rem);
+  font-weight: 700;
+  color: hsl(0, 1%, 44%);
+  letter-spacing: 3px;
+}
+
+@font-face {
+  font-family: "Poppins-ExtraBold";
+  src: url("assets/fonts/Poppins-Bold.ttf");
+}
+.inputs input {
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  padding: 0.6rem;
+  outline: none;
+  border: 1px solid hsl(0, 0%, 86%);
+  border-radius: 0.2rem;
+  margin-top: 0.5rem;
+  width: 100%;
+  font-family: "Poppins-ExtraBold";
+  color: hsl(0, 0%, 8%);
+}
+.inputs input:focus {
+  border-color: hsl(259, 100%, 65%);
+}
+
+@font-face {
+  font-family: "Poppins-Italic";
+  src: url("assets/fonts/Poppins-Italic.ttf");
+}
+.inputs p {
+  letter-spacing: 0px;
+  text-transform: none;
+  margin-top: 0.2rem;
+  color: hsl(0, 100%, 67%);
+  font-weight: 400;
+  font-family: "Poppins-Italic";
+  font-style: italic;
+  font-size: clamp(0.4rem, 1.2vw, 1rem);
+  visibility: hidden;
+}
+
+.warning {
+  animation: shake 0.2s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+    color: hsl(0, 1%, 44%);
+  }
+  25% {
+    transform: translateX(5px);
+    color: hsl(0, 100%, 67%);
+  }
+  50% {
+    transform: translateX(-5px);
+    color: hsl(0, 1%, 44%);
+  }
+  75% {
+    transform: translateX(5px);
+    color: hsl(0, 100%, 67%);
+  }
+}
+.show-result {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+hr {
+  flex-grow: 1;
+  border: none;
+  border-top: 1px solid hsl(0, 0%, 86%);
+  background-color: hsl(0, 0%, 86%);
+}
+
+button {
+  background-color: hsl(259, 100%, 65%);
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  padding: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  filter: hue-rotate(40deg);
+  filter: drop-shadow(1px 0px 2px hsl(259, 100%, 65%));
+}
+button:focus {
+  border-color: hsl(259, 100%, 65%);
+  box-shadow: 0 0 0 2px hsl(259, 100%, 65%);
+  outline: none;
+}
+
+button img {
+  width: 100%;
+  height: auto;
+}
+
+@font-face {
+  font-family: "myfontface";
+  src: url("assets/fonts/Poppins-ExtraBoldItalic.ttf") format("truetype");
+}
+.outputs {
+  font-size: clamp(3rem, 7vw, 5rem);
+  color: hsl(0, 0%, 8%);
+  font-weight: 700;
+  font-family: "myfontface";
+  font-weight: 900;
+  font-style: italic;
+}
+
+.outputs span {
+  color: hsl(259, 100%, 65%);
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 600px) {
+  .inputs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .show-result {
+    margin-top: 1rem;
+    position: relative;
+    height: 65px;
+  }
+  button {
+    width: 60px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media screen and (max-width: 430px) {
+  .outputs {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+  }
+  button {
+    width: 55px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 375px) {
+  .outputs {
+    font-size: clamp(2rem, 7vw, 5rem);
+  }
+  button {
+    width: 55px;
+    height: auto;
+  }
+  .card {
+    border-bottom-right-radius: 7rem;
+  }
+  .inputs input {
+    font-size: clamp(0.8rem, 1vw, 1.8rem);
+  }
+  .inputs p {
+    font-size: clamp(0.3rem, 1vw, 1rem);
+  }
+}/*# sourceMappingURL=styles.css.map */
